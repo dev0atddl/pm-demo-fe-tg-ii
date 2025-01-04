@@ -55,6 +55,7 @@ function App() {
 
   return (
     <main>
+      <a onClick={IILogin}>Login</a>
       <a href="javascript:Telegram.WebApp.openLink('https://telegra.ph/api',{try_instant_view:true});">Login</a>
     </main>
   );
