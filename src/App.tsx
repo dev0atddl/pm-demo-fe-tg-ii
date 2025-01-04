@@ -16,6 +16,11 @@ function App() {
   }, [])
   
   async function IILogin() {
+    try { 
+      (window as any).Telegram.WebApp.openLink('https://www.google.com', { tryInstantView: true })
+    } catch (e) {
+      console.log(e);
+    }
     /*
     const authClient = await AuthClient.create({ keyType });
     // 
