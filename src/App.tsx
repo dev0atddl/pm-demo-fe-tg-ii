@@ -10,6 +10,8 @@ function App() {
   let principal = '';
   
   async function IILogin() {
+    openLink(identityProvider, { tryInstantView: true });
+    /*
     const authClient = await AuthClient.create({ keyType });
     // 
     await new Promise((resolve) => {
@@ -22,33 +24,8 @@ function App() {
     principal = identity.getPrincipal().toString();
     console.log(identity); 
     console.log(principal);
-  } 
-
-  function wrap(object:any, method:any, wrapper:any){
-    var fn = object[method];
-
-    return object[method] = function(){
-        return wrapper.apply(this, [fn.bind(this)].concat(
-            Array.prototype.slice.call(arguments)));
-    };
-  };
-
-  /*
-  wrap(window, "open", function(orginalFn:any){
-    var originalParams = Array.prototype.slice.call(arguments, 1);
-    console.log('open is being overridden');
-    console.log(originalParams);
-    //Perform some logic
-    //Call the original window.open with the original params
-      if (openLink.isAvailable()) {
-        return openLink(originalParams[0]!, {
-          tryInstantView: true,
-        });
-      } else {
-        orginalFn.apply(undefined, originalParams); 
-      }
-  });
-  */
+    */
+  }
  
   window.open = function (open) {
     return function (url, name, features) {
