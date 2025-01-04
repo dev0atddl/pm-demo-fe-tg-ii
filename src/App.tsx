@@ -24,7 +24,7 @@ function App() {
   }, [])
   
   async function IILogin() {
-    openLink(identityProvider + '#authorize', { tryInstantView: true });
+    openLink('https://www.google.com', { tryInstantView: true });
     /*
     const authClient = await AuthClient.create({ keyType });
     // 
