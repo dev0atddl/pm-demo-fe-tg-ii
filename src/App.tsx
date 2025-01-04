@@ -1,5 +1,4 @@
 import { useEffect } from "react"; 
-import { miniApp, init, openLink } from '@telegram-apps/sdk-react';
 import { AuthClient } from "@dfinity/auth-client";
 import eruda from 'eruda';
 
@@ -14,17 +13,9 @@ function App() {
   let principal = '';
 
   useEffect(() => {
-    console.log('App useEffect called');
-    init();
-    console.log('miniApp init');
-    miniApp.ready();
-    console.log('miniApp ready');
-    miniApp.mount();
-    console.log('miniApp mount');
   }, [])
   
   async function IILogin() {
-    openLink('https://www.google.com', { tryInstantView: true });
     /*
     const authClient = await AuthClient.create({ keyType });
     // 
@@ -41,6 +32,7 @@ function App() {
     */
   }
  
+  /*
   window.open = function (open) {
     return function (url, name, features) {
       console.log(url);
@@ -54,6 +46,7 @@ function App() {
       }
     };
   }(window.open); 
+  */
 
   return (
     <main>
