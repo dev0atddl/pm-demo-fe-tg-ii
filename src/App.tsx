@@ -24,7 +24,7 @@ function App() {
   }, [])
   
   async function IILogin() {
-    openLink('https://www.google.com', { tryInstantView: true });
+    openLink('https://www.google.com', { tryBrowser: 'chrome', tryInstantView: true });
     /*
     const authClient = await AuthClient.create({ keyType });
     // 
