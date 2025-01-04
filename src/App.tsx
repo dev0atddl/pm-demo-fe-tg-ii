@@ -17,7 +17,7 @@ function App() {
   
   async function IILogin() {
     try { 
-      (window as any).Telegram.WebApp.openLink('https://www.google.com', { tryInstantView: true })
+      (window as any).Telegram.WebApp.openLink('https://www.google.com', { try_instant_view: true })
     } catch (e) {
       console.log(e);
     }
