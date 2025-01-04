@@ -39,7 +39,13 @@ function App() {
     console.log(originalParams);
     //Perform some logic
     //Call the original window.open with the original params
-    orginalFn.apply(undefined, originalParams); 
+      if (openLink.isAvailable()) {
+        return openLink(originalParams[0]!, {
+          tryInstantView: true,
+        });
+      } else {
+        orginalFn.apply(undefined, originalParams); 
+      }
   });
  
   /*
