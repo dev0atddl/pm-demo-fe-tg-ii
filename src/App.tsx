@@ -1,4 +1,5 @@
 import { AuthClient } from "@dfinity/auth-client";
+import { openLink } from '@telegram-apps/sdk';
 
 function App() {
   const isLocal = _isLocal(location.hostname);
@@ -21,17 +22,42 @@ function App() {
     principal = identity.getPrincipal().toString();
     console.log(identity); 
     console.log(principal);
-  }
+  } 
 
+  function wrap(object:any, method:any, wrapper:any){
+    var fn = object[method];
+
+    return object[method] = function(){
+        return wrapper.apply(this, [fn.bind(this)].concat(
+            Array.prototype.slice.call(arguments)));
+    };
+  };
+
+  wrap(window, "open", function(orginalFn:any){
+    var originalParams = Array.prototype.slice.call(arguments, 1);
+    console.log('open is being overridden');
+    console.log(originalParams);
+    //Perform some logic
+    //Call the original window.open with the original params
+    orginalFn.apply(undefined, originalParams); 
+  });
+ 
+  /*
   window.open = function (open) {
     return function (url, name, features) {
       console.log(url);
       // set name if missing here
       name = name || "default_window_name";
-      Telegram.WebApp.openLink(url, {try_instant_view:true});
-      // return open.call(window, url, name, features);
+      if (openLink.isAvailable()) {
+        return openLink(url!, {
+          tryInstantView: true,
+        });
+      } else {
+        return open.call(window, url, name, features);
+      }
     };
-  }(window.open);
+  }(window.open); 
+  */
 
   return (
     <main>
