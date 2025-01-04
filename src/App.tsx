@@ -23,6 +23,15 @@ function App() {
     console.log(principal);
   }
 
+  window.open = function (open) {
+    return function (url, name, features) {
+      console.log(url);
+      // set name if missing here
+      name = name || "default_window_name";
+      return open.call(window, url, name, features);
+    };
+  }(window.open);
+
   return (
     <main>
       <button onClick={IILogin}>Login</button>
