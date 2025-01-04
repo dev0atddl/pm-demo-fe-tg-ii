@@ -1,5 +1,6 @@
+import { useEffect } from "react"; 
 import { AuthClient } from "@dfinity/auth-client";
-import { openLink } from '@telegram-apps/sdk';
+import { init, miniApp, openLink } from '@telegram-apps/sdk';
 import eruda from 'eruda';
 
 eruda.init();
@@ -11,6 +12,16 @@ function App() {
   const keyType = 'Ed25519';
   let identity = null;
   let principal = '';
+
+  useEffect(() => {
+    console.log('App useEffect called');
+    miniApp.ready();
+    console.log('miniApp ready');
+    init();
+    console.log('miniApp init');
+    miniApp.mount();
+    console.log('miniApp mount');
+  }, [])
   
   async function IILogin() {
     alert(identityProvider);
