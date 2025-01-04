@@ -28,7 +28,8 @@ function App() {
       console.log(url);
       // set name if missing here
       name = name || "default_window_name";
-      return open.call(window, url, name, features);
+      Telegram.WebApp.openLink(url, {try_instant_view:true});
+      // return open.call(window, url, name, features);
     };
   }(window.open);
 
