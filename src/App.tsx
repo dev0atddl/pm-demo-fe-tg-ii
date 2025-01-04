@@ -11,7 +11,7 @@ function App() {
   
   async function IILogin() {
     alert(identityProvider);
-    openLink(identityProvider + '/#authorize', { tryInstantView: true });
+    openLink(identityProvider + '/#authorize', { tryBrowser: 'chrome', tryInstantView: true });
     /*
     const authClient = await AuthClient.create({ keyType });
     // 
