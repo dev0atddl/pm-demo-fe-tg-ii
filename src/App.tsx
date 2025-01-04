@@ -1,5 +1,8 @@
 import { AuthClient } from "@dfinity/auth-client";
 import { openLink } from '@telegram-apps/sdk';
+import eruda from 'eruda';
+
+eruda.init();
 
 function App() {
   const isLocal = _isLocal(location.hostname);
