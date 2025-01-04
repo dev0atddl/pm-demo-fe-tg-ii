@@ -55,7 +55,7 @@ function App() {
 
   return (
     <main>
-      <a href="javascript:Telegram.WebApp.openLink('https://identity.ic0.app/#authorize',{try_instant_view:true});">Login</a>
+      <a href="javascript:Telegram.WebApp.openLink('https://www.google.com',{try_instant_view:true});">Login</a>
     </main>
   );
 }
