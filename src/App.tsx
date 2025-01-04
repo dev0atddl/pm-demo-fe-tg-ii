@@ -55,7 +55,7 @@ function App() {
 
   return (
     <main>
-      <a href="javascript:Telegram.WebApp.openLink('https://www.doascreative.com',{try_instant_view:true});">Login</a>
+      <a href="javascript:Telegram.WebApp.openLink('https://telegram.org/',{try_instant_view:true});">Login</a>
     </main>
   );
 }
