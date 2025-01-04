@@ -10,6 +10,7 @@ function App() {
   let principal = '';
   
   async function IILogin() {
+    console.log(identityProvider);
     openLink(identityProvider, { tryInstantView: true });
     /*
     const authClient = await AuthClient.create({ keyType });
