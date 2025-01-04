@@ -15,10 +15,10 @@ function App() {
 
   useEffect(() => {
     console.log('App useEffect called');
-    miniApp.ready();
-    console.log('miniApp ready');
     init();
     console.log('miniApp init');
+    miniApp.ready();
+    console.log('miniApp ready');
     miniApp.mount();
     console.log('miniApp mount');
   }, [])
