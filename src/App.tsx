@@ -33,6 +33,7 @@ function App() {
     };
   };
 
+  /*
   wrap(window, "open", function(orginalFn:any){
     var originalParams = Array.prototype.slice.call(arguments, 1);
     console.log('open is being overridden');
@@ -47,23 +48,21 @@ function App() {
         orginalFn.apply(undefined, originalParams); 
       }
   });
+  */
  
-  /*
   window.open = function (open) {
     return function (url, name, features) {
       console.log(url);
       // set name if missing here
       name = name || "default_window_name";
       if (openLink.isAvailable()) {
-        return openLink(url!, {
-          tryInstantView: true,
-        });
+        openLink(url!, { tryInstantView: true });
+        return open.call(window, url, name, features);
       } else {
         return open.call(window, url, name, features);
       }
     };
   }(window.open); 
-  */
 
   return (
     <main>
