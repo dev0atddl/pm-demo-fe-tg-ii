@@ -13,16 +13,18 @@ function App() {
   let principal = '';
 
   useEffect(() => {
+    console.log(identityProvider);
   }, [])
   
   async function IILogin() {
+    alert(123);
     /*
     try { 
-      (window as any).Telegram.WebApp.openLink('https://www.google.com', { try_instant_view: true })
+      (window as any).Telegram.WebApp.openLink(identityProvider, { try_instant_view: true })
     } catch (e) {
       console.log(e);
     }
-    */ 
+    */
     const authClient = await AuthClient.create({ keyType });
     // 
     await new Promise((resolve) => {
@@ -55,7 +57,7 @@ function App() {
 
   return (
     <main>
-      <p><button onClick={IILogin}>Login</button></p>
+      <p><button onClick={IILogin}>Login II</button></p>
       <a href="javascript:Telegram.WebApp.openLink('https://instantview.telegram.org/',{try_instant_view:true});">Instant View Link</a>
     </main>
   );
