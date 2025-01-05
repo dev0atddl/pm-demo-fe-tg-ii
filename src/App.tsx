@@ -17,14 +17,18 @@ function App() {
   
   async function IILogin() {
     try { 
+      alert(0);
       const authClient = await AuthClient.create({ keyType });
+      alert(1);
       // 
       await new Promise((resolve) => {
+        alert(2);
           authClient.login({
               identityProvider,
               onSuccess: resolve
           });
       });
+      alert(3);
       identity = authClient.getIdentity();
       principal = identity.getPrincipal().toString();
       console.log(identity); 
@@ -52,7 +56,7 @@ function App() {
 
   return (
     <main>
-      <p><a href={randURL()} onClick={IILogin}>Login II</a></p>
+      <a href={randURL()} onClick={IILogin}>Login II</a><br />
       <a href="javascript:Telegram.WebApp.openLink('https://instantview.telegram.org/',{try_instant_view:true});">Instant View Link</a>
     </main>
   );
