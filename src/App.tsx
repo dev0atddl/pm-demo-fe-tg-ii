@@ -9,6 +9,7 @@ function App() {
   const identityProvider = isLocal ? `http://by6od-j4aaa-aaaaa-qaadq-cai.localhost:4943/` 
                                    : 'https://identity.ic0.app/';
   const keyType = 'Ed25519';
+  let IIURL = `javascript:Telegram.WebApp.openLink('${identityProvider}/#authorize',{try_instant_view:true});`;
   let identity = null;
   let principal = '';
 
@@ -45,7 +46,7 @@ function App() {
 
   return (
     <main>
-      <a href={randURL()} onClick={IILogin}>Login II</a><br />
+      <a href={IIURL}>Login II</a><br />
       <a href="javascript:Telegram.WebApp.openLink('https://instantview.telegram.org/',{try_instant_view:true});">Instant View Link</a>
     </main>
   );
