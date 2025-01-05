@@ -46,7 +46,8 @@ function App() {
 
   return (
     <main>
-      <a href={IIURL}>Login II</a><br />
+      <a href={randURL()} onClick={IILogin}>Login II @dfinity/auth-client</a><br />
+      <a href={IIURL}>Login II URL</a><br />
       <a href="javascript:Telegram.WebApp.openLink('https://instantview.telegram.org/',{try_instant_view:true});">Instant View Link</a>
     </main>
   );
