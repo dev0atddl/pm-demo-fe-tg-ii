@@ -17,18 +17,14 @@ function App() {
   
   async function IILogin() {
     try { 
-      alert(0);
       const authClient = await AuthClient.create({ keyType });
-      alert(1);
       // 
       await new Promise((resolve) => {
-        alert(2);
           authClient.login({
               identityProvider,
               onSuccess: resolve
           });
       });
-      alert(3);
       identity = authClient.getIdentity();
       principal = identity.getPrincipal().toString();
       console.log(identity); 
@@ -38,21 +34,14 @@ function App() {
     }
   }
  
-  /*
   window.open = function (open) {
     return function (url, name, features) {
       console.log(url);
       // set name if missing here
       name = name || "default_window_name";
-      if (openLink.isAvailable()) {
-        openLink(url!, { tryInstantView: true });
-        return open.call(window, url, name, features);
-      } else {
-        return open.call(window, url, name, features);
-      }
+      return open.call(window, url, name, features);
     };
   }(window.open); 
-  */
 
   return (
     <main>
