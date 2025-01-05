@@ -65,6 +65,6 @@ function _isLocal(str:any) {
 }
 
 function randURL() {
-  let url = '#/r=' + (Math.floor(Math.random() * 1000) + 1);
+  let url = '#?r=' + (Math.floor(Math.random() * 1000) + 1);
   return url;
 }
