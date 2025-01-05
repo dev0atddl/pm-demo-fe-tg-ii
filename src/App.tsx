@@ -17,7 +17,6 @@ function App() {
   }, [])
   
   async function IILogin() {
-    alert(123);
     /*
     try { 
       (window as any).Telegram.WebApp.openLink(identityProvider, { try_instant_view: true })
@@ -26,6 +25,7 @@ function App() {
     }
     */
     const authClient = await AuthClient.create({ keyType });
+    alert(0);
     // 
     await new Promise((resolve) => {
         authClient.login({
@@ -33,7 +33,9 @@ function App() {
             onSuccess: resolve
         });
     });
+    alert(1);
     identity = authClient.getIdentity();
+    alert(2);
     principal = identity.getPrincipal().toString();
     console.log(identity); 
     console.log(principal); 
