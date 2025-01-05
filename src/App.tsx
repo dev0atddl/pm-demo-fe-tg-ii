@@ -52,7 +52,7 @@ function App() {
 
   return (
     <main>
-      <p><a href='#' onClick={IILogin}>Login II</a></p>
+      <p><a href={randURL()} onClick={IILogin}>Login II</a></p>
       <a href="javascript:Telegram.WebApp.openLink('https://instantview.telegram.org/',{try_instant_view:true});">Instant View Link</a>
     </main>
   );
@@ -62,4 +62,9 @@ export default App;
 
 function _isLocal(str:any) {
   return (str).indexOf('127.0.0.1') != -1 || (str).indexOf('localhost') != -1;
+}
+
+function randURL() {
+  let url = '#/r=' + (Math.floor(Math.random() * 1000) + 1);
+  return url;
 }
