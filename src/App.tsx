@@ -13,18 +13,9 @@ function App() {
   let principal = '';
 
   useEffect(() => {
-    console.log(identityProvider);
   }, [])
   
   async function IILogin() {
-    /*
-    try { 
-      (window as any).Telegram.WebApp.openLink(identityProvider, { try_instant_view: true })
-    } catch (e) {
-      console.log(e);
-    }
-    */
-
     try { 
       const authClient = await AuthClient.create({ keyType });
       // 
@@ -39,7 +30,7 @@ function App() {
       console.log(identity); 
       console.log(principal);
     } catch (e) {
-      console.log(e);
+      alert(e);
     }
   }
  
