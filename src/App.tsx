@@ -16,12 +16,13 @@ function App() {
   }, [])
   
   async function IILogin() {
+    /*
     try { 
       (window as any).Telegram.WebApp.openLink('https://www.google.com', { try_instant_view: true })
     } catch (e) {
       console.log(e);
     }
-    /*
+    */ 
     const authClient = await AuthClient.create({ keyType });
     // 
     await new Promise((resolve) => {
@@ -33,8 +34,7 @@ function App() {
     identity = authClient.getIdentity();
     principal = identity.getPrincipal().toString();
     console.log(identity); 
-    console.log(principal);
-    */
+    console.log(principal); 
   }
  
   /*
@@ -55,6 +55,7 @@ function App() {
 
   return (
     <main>
+      <p><a href="#" onClick={IILogin}>Login</a></p>
       <a href="javascript:Telegram.WebApp.openLink('https://telegram.org/',{try_instant_view:true});">Login</a>
     </main>
   );
