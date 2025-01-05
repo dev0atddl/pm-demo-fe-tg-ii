@@ -61,7 +61,7 @@ function App() {
 
   return (
     <main>
-      <p><button onClick={IILogin}>Login II</button></p>
+      <p><a href='#' onClick={IILogin}>Login II</a></p>
       <a href="javascript:Telegram.WebApp.openLink('https://instantview.telegram.org/',{try_instant_view:true});">Instant View Link</a>
     </main>
   );
