@@ -24,21 +24,23 @@ function App() {
       console.log(e);
     }
     */
-    const authClient = await AuthClient.create({ keyType });
-    alert(0);
-    // 
-    await new Promise((resolve) => {
-        authClient.login({
-            identityProvider,
-            onSuccess: resolve
-        });
-    });
-    alert(1);
-    identity = authClient.getIdentity();
-    alert(2);
-    principal = identity.getPrincipal().toString();
-    console.log(identity); 
-    console.log(principal); 
+
+    try { 
+      const authClient = await AuthClient.create({ keyType });
+      // 
+      await new Promise((resolve) => {
+          authClient.login({
+              identityProvider,
+              onSuccess: resolve
+          });
+      });
+      identity = authClient.getIdentity();
+      principal = identity.getPrincipal().toString();
+      console.log(identity); 
+      console.log(principal);
+    } catch (e) {
+      console.log(e);
+    }
   }
  
   /*
