@@ -15,7 +15,7 @@ function App() {
   let principal = '';
 
   useEffect(() => {
-    setUrlParams(document.location.search);
+    setUrlParams(window.location.href);
   }, [])
   
   async function IILogin() {
