@@ -53,7 +53,7 @@ function App() {
     <main>
       <a href={randURL()} onClick={IILogin}>Login II @dfinity/auth-client</a><br />
       <a href={IIURL}>Login II URL</a><br />
-      <a href="https://pm-deom-ii-proxy.vercel.app/">II Proxy</a>
+      <a href="javascript:Telegram.WebApp.openLink('https://pm-deom-ii-proxy.vercel.app/')">II Proxy</a>
       <p>{startApp}</p>
     </main>
   );
