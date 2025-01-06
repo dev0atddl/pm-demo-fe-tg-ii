@@ -15,6 +15,7 @@ function App() {
   let principal = '';
 
   useEffect(() => {
+    console.log(window.location);
     setUrlParams(window.location.href);
   }, [])
   
