@@ -1,10 +1,11 @@
-import { useEffect } from "react"; 
+import { useEffect, useState } from "react"; 
 import { AuthClient } from "@dfinity/auth-client";
 import eruda from 'eruda';
 
 eruda.init();
 
 function App() {
+  const [urlParams, setUrlParams] = useState('NaN');
   const isLocal = _isLocal(location.hostname);
   const identityProvider = isLocal ? `http://by6od-j4aaa-aaaaa-qaadq-cai.localhost:4943/` 
                                    : 'https://identity.ic0.app/';
@@ -14,6 +15,7 @@ function App() {
   let principal = '';
 
   useEffect(() => {
+    setUrlParams(document.location.search);
   }, [])
   
   async function IILogin() {
@@ -49,6 +51,7 @@ function App() {
       <a href={randURL()} onClick={IILogin}>Login II @dfinity/auth-client</a><br />
       <a href={IIURL}>Login II URL</a><br />
       <a href="javascript:Telegram.WebApp.openLink('https://instantview.telegram.org/',{try_instant_view:true});">Instant View Link</a>
+      <p>{urlParams}</p>
     </main>
   );
 }
