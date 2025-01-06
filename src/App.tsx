@@ -6,6 +6,7 @@ eruda.init();
 
 function App() {
   const [urlParams, setUrlParams] = useState('NaN');
+  const [startApp, setStartApp] = useState('');
   const isLocal = _isLocal(location.hostname);
   const identityProvider = isLocal ? `http://by6od-j4aaa-aaaaa-qaadq-cai.localhost:4943/` 
                                    : 'https://identity.ic0.app/';
@@ -15,6 +16,7 @@ function App() {
   let principal = '';
 
   useEffect(() => {
+    setStartApp(window.location.href);
     console.log(window.location);
     setUrlParams(window.location.href);
   }, [])
@@ -51,8 +53,8 @@ function App() {
     <main>
       <a href={randURL()} onClick={IILogin}>Login II @dfinity/auth-client</a><br />
       <a href={IIURL}>Login II URL</a><br />
-      <a href="javascript:Telegram.WebApp.openLink('https://instantview.telegram.org/',{try_instant_view:true});">Instant View Link</a>
-      <p>{urlParams}</p>
+      <a href="https://pm-deom-ii-proxy.vercel.app/">II Proxy</a>
+      <p>{startApp}</p>
     </main>
   );
 }
